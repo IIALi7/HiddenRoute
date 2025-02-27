@@ -1,8 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=/secret-directory/?flag=CSC{404bot}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Directory</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const flag = "CSC{404bot}";
+            if (!window.location.search.includes("flag=")) {
+                window.history.replaceState({}, "", "?flag=" + flag);
+            }
+            document.getElementById("flag").textContent = flag;
+        };
+    </script>
 </head>
 <body>
+    <h1 id="flag"></h1>
 </body>
 </html>
